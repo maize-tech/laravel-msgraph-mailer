@@ -2,9 +2,9 @@
 
 namespace Maize\MsgraphMail;
 
+use Maize\MsgraphMail\Commands\MsgraphMailCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Maize\MsgraphMail\Commands\MsgraphMailCommand;
 
 class MsgraphMailServiceProvider extends PackageServiceProvider
 {
