@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Maize\MsgraphMail\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class MsgraphMailCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-msgraph-mail';
 
     public $description = 'My command';
 
