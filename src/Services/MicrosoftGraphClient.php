@@ -3,7 +3,6 @@
 namespace Maize\MsgraphMail\Services;
 
 use GuzzleHttp\Psr7\Utils;
-use Illuminate\Support\Facades\Log;
 use Maize\MsgraphMail\Exceptions\MicrosoftGraphException;
 use Microsoft\Graph\Generated\Models\BodyType;
 use Microsoft\Graph\Generated\Models\EmailAddress;
@@ -44,22 +43,7 @@ class MicrosoftGraphClient
                 ->post($requestBody)
                 ->wait();
 
-            Log::info('Email sent via Microsoft Graph', [
-                'to' => array_map(fn ($r) => $r->getEmailAddress()->getAddress(), $message->getToRecipients() ?? []),
-                'subject' => $message->getSubject(),
-            ]);
-
         } catch (\Exception $e) {
-            Log::error('Microsoft Graph email send failed', [
-                'error' => $e->getMessage(),
-                'class' => get_class($e),
-                'code' => $e->getCode(),
-                'trace' => $e->getTraceAsString(),
-                'from' => $this->fromAddress,
-                'to' => array_map(fn ($r) => $r->getEmailAddress()->getAddress(), $message->getToRecipients() ?? []),
-                'subject' => $message->getSubject(),
-            ]);
-
             throw new MicrosoftGraphException(
                 "Failed to send email: {$e->getMessage()}",
                 previous: $e
