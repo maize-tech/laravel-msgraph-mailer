@@ -1,9 +1,9 @@
 # Laravel Microsoft Graph Mail
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/maize-tech/laravel-msgraph-mail.svg?style=flat-square)](https://packagist.org/packages/maize-tech/laravel-msgraph-mail)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/maize-tech/laravel-msgraph-mail/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/maize-tech/laravel-msgraph-mail/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/maize-tech/laravel-msgraph-mail/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/maize-tech/laravel-msgraph-mail/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/maize-tech/laravel-msgraph-mail.svg?style=flat-square)](https://packagist.org/packages/maize-tech/laravel-msgraph-mail)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/maize-tech/laravel-msgraph-mailer.svg?style=flat-square)](https://packagist.org/packages/maize-tech/laravel-msgraph-mailer)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/maize-tech/laravel-msgraph-mailer/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/maize-tech/laravel-msgraph-mailer/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/maize-tech/laravel-msgraph-mailer/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/maize-tech/laravel-msgraph-mailer/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/maize-tech/laravel-msgraph-mailer.svg?style=flat-square)](https://packagist.org/packages/maize-tech/laravel-msgraph-mailer)
 
 A Laravel mail transport driver for sending emails via Microsoft Graph API using OAuth2 authentication.
 
@@ -14,7 +14,7 @@ This package provides a custom Symfony Mailer transport that integrates seamless
 You can install the package via composer:
 
 ```bash
-composer require maize-tech/laravel-msgraph-mail
+composer require maize-tech/laravel-msgraph-mailer
 ```
 
 ## Configuration

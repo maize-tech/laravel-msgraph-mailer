@@ -1,9 +1,9 @@
 <?php
 
-namespace Maize\MsgraphMail\Tests;
+namespace Maize\MsgraphMailer\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Maize\MsgraphMail\MsgraphMailServiceProvider;
+use Maize\MsgraphMailer\MsgraphMailerServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Maize\\MsgraphMail\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Maize\\MsgraphMailer\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            MsgraphMailServiceProvider::class,
+            MsgraphMailerServiceProvider::class,
         ];
     }
 

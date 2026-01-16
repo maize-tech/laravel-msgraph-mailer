@@ -1,3 +1,3 @@
 # Changelog
 
-All notable changes to `laravel-msgraph-mail` will be documented in this file.
+All notable changes to `laravel-msgraph-mailer` will be documented in this file.

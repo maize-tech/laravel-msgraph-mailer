@@ -1,6 +1,6 @@
 <?php
 
-namespace Maize\MsgraphMail\Saloon\Connectors;
+namespace Maize\MsgraphMailer\Saloon\Connectors;
 
 use Saloon\Http\Connector;
 use Saloon\Traits\Plugins\AcceptsJson;

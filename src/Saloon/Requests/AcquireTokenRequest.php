@@ -1,6 +1,6 @@
 <?php
 
-namespace Maize\MsgraphMail\Saloon\Requests;
+namespace Maize\MsgraphMailer\Saloon\Requests;
 
 use Saloon\CachePlugin\Contracts\Cacheable;
 use Saloon\CachePlugin\Contracts\Driver;

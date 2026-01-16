@@ -1,6 +1,6 @@
 <?php
 
-use Maize\MsgraphMail\Saloon\Requests\AcquireTokenRequest;
+use Maize\MsgraphMailer\Saloon\Requests\AcquireTokenRequest;
 
 test('acquire token request has correct endpoint', function () {
     $request = new AcquireTokenRequest(

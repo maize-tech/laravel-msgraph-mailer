@@ -1,5 +1,5 @@
 <?php
 
-use Maize\MsgraphMail\Tests\TestCase;
+use Maize\MsgraphMailer\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

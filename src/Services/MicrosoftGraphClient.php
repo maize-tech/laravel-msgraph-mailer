@@ -1,10 +1,10 @@
 <?php
 
-namespace Maize\MsgraphMail\Services;
+namespace Maize\MsgraphMailer\Services;
 
 use Exception;
 use GuzzleHttp\Psr7\Utils;
-use Maize\MsgraphMail\Exceptions\MicrosoftGraphException;
+use Maize\MsgraphMailer\Exceptions\MicrosoftGraphException;
 use Microsoft\Graph\Generated\Models\BodyType;
 use Microsoft\Graph\Generated\Models\EmailAddress;
 use Microsoft\Graph\Generated\Models\FileAttachment;

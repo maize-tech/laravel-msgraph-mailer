@@ -1,6 +1,6 @@
 <?php
 
-namespace Maize\MsgraphMail\Exceptions;
+namespace Maize\MsgraphMailer\Exceptions;
 
 use Exception;
 

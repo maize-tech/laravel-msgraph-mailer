@@ -1,14 +1,14 @@
 <?php
 
-namespace Maize\MsgraphMail\Services;
+namespace Maize\MsgraphMailer\Services;
 
 use Exception;
 use Http\Promise\FulfilledPromise;
 use Http\Promise\Promise;
 use Http\Promise\RejectedPromise;
-use Maize\MsgraphMail\Exceptions\GraphAuthenticationException;
-use Maize\MsgraphMail\Saloon\Connectors\MicrosoftGraphConnector;
-use Maize\MsgraphMail\Saloon\Requests\AcquireTokenRequest;
+use Maize\MsgraphMailer\Exceptions\GraphAuthenticationException;
+use Maize\MsgraphMailer\Saloon\Connectors\MicrosoftGraphConnector;
+use Maize\MsgraphMailer\Saloon\Requests\AcquireTokenRequest;
 use Microsoft\Kiota\Abstractions\Authentication\AccessTokenProvider;
 use Microsoft\Kiota\Abstractions\Authentication\AllowedHostsValidator;
 

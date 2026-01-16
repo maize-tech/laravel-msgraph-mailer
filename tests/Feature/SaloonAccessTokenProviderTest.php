@@ -1,8 +1,8 @@
 <?php
 
-use Maize\MsgraphMail\Saloon\Connectors\MicrosoftGraphConnector;
-use Maize\MsgraphMail\Saloon\Requests\AcquireTokenRequest;
-use Maize\MsgraphMail\Services\SaloonAccessTokenProvider;
+use Maize\MsgraphMailer\Saloon\Connectors\MicrosoftGraphConnector;
+use Maize\MsgraphMailer\Saloon\Requests\AcquireTokenRequest;
+use Maize\MsgraphMailer\Services\SaloonAccessTokenProvider;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 

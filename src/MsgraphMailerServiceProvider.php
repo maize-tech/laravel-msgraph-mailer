@@ -1,20 +1,20 @@
 <?php
 
-namespace Maize\MsgraphMail;
+namespace Maize\MsgraphMailer;
 
 use Illuminate\Support\Facades\Mail;
-use Maize\MsgraphMail\Saloon\Connectors\MicrosoftGraphConnector;
-use Maize\MsgraphMail\Services\MicrosoftGraphClient;
-use Maize\MsgraphMail\Services\SaloonAccessTokenProvider;
-use Maize\MsgraphMail\Transport\MicrosoftGraphTransport;
+use Maize\MsgraphMailer\Saloon\Connectors\MicrosoftGraphConnector;
+use Maize\MsgraphMailer\Services\MicrosoftGraphClient;
+use Maize\MsgraphMailer\Services\SaloonAccessTokenProvider;
+use Maize\MsgraphMailer\Transport\MicrosoftGraphTransport;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class MsgraphMailServiceProvider extends PackageServiceProvider
+class MsgraphMailerServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        $package->name('laravel-msgraph-mail');
+        $package->name('laravel-msgraph-mailer');
     }
 
     public function packageRegistered(): void

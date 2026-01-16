@@ -1,9 +1,9 @@
 <?php
 
-namespace Maize\MsgraphMail\Transport;
+namespace Maize\MsgraphMailer\Transport;
 
-use Maize\MsgraphMail\Exceptions\MicrosoftGraphException;
-use Maize\MsgraphMail\Services\MicrosoftGraphClient;
+use Maize\MsgraphMailer\Exceptions\MicrosoftGraphException;
+use Maize\MsgraphMailer\Services\MicrosoftGraphClient;
 use Symfony\Component\Mailer\Envelope;
 use Symfony\Component\Mailer\SentMessage;
 use Symfony\Component\Mailer\Transport\TransportInterface;
