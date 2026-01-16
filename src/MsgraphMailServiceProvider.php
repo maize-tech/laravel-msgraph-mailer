@@ -19,7 +19,6 @@ class MsgraphMailServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void
     {
-        // Register Saloon connector as singleton with named binding
         $this->app->singleton('mail.microsoft-graph.connector', function ($app) {
             /** @var array{tenant_id: string}|null $config */
             $config = config('mail.mailers.microsoft-graph');
@@ -29,7 +28,6 @@ class MsgraphMailServiceProvider extends PackageServiceProvider
             );
         });
 
-        // Register access token provider as singleton with named binding
         $this->app->singleton('mail.microsoft-graph.token-provider', function ($app) {
             /** @var array{client_id: string, client_secret: string}|null $config */
             $config = config('mail.mailers.microsoft-graph');
@@ -38,13 +36,12 @@ class MsgraphMailServiceProvider extends PackageServiceProvider
                 connector: $app->make('mail.microsoft-graph.connector'),
                 clientId: $config['client_id'] ?? '',
                 clientSecret: $config['client_secret'] ?? '',
-                cacheTtl: 3300,        // 55 minutes (tokens are valid for 60 minutes)
+                cacheTtl: 3300, // 55 minutes (tokens are valid for 60 minutes)
                 retryAttempts: 3,
-                retryDelay: 1000       // 1 second
+                retryDelay: 1000 // 1 second
             );
         });
 
-        // Register Graph client as singleton with named binding
         $this->app->singleton('mail.microsoft-graph.client', function ($app) {
             return new MicrosoftGraphClient(
                 tokenProvider: $app->make('mail.microsoft-graph.token-provider'),
@@ -55,7 +52,6 @@ class MsgraphMailServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
-        // Register custom mail transport
         Mail::extend('microsoft-graph', function (array $config) {
             return new MicrosoftGraphTransport(
                 client: $this->app->make('mail.microsoft-graph.client')

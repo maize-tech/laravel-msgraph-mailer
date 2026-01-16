@@ -2,6 +2,7 @@
 
 namespace Maize\MsgraphMail\Services;
 
+use Exception;
 use Http\Promise\FulfilledPromise;
 use Http\Promise\Promise;
 use Http\Promise\RejectedPromise;
@@ -38,7 +39,7 @@ class SaloonAccessTokenProvider implements AccessTokenProvider
             $token = $this->getAccessToken();
 
             return new FulfilledPromise($token);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return new RejectedPromise($e);
         }
     }
@@ -62,11 +63,11 @@ class SaloonAccessTokenProvider implements AccessTokenProvider
             $response = $this->connector->send($request);
 
             $data = $response->json();
-            $token = $data['access_token'] ?? throw new \Exception('No access token in response');
+            $token = $data['access_token'] ?? throw new Exception('No access token in response');
 
             return $token;
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             throw new GraphAuthenticationException(
                 "Failed to acquire Microsoft Graph access token: {$e->getMessage()}",
                 previous: $e
@@ -84,13 +85,12 @@ class SaloonAccessTokenProvider implements AccessTokenProvider
             retryDelay: $this->retryDelay,
         );
 
-        // Use Saloon's built-in cache invalidation
         $request->invalidateCache();
 
         // Send request to refresh the cache
         try {
             $this->connector->send($request);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             // Ignore errors during cache invalidation
         }
     }

@@ -2,6 +2,7 @@
 
 namespace Maize\MsgraphMail\Services;
 
+use Exception;
 use GuzzleHttp\Psr7\Utils;
 use Maize\MsgraphMail\Exceptions\MicrosoftGraphException;
 use Microsoft\Graph\Generated\Models\BodyType;
@@ -43,9 +44,9 @@ class MicrosoftGraphClient
                 ->post($requestBody)
                 ->wait();
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             throw new MicrosoftGraphException(
-                "Failed to send email: {$e->getMessage()}",
+                message: "Failed to send email: {$e->getMessage()}",
                 previous: $e
             );
         }
@@ -61,10 +62,8 @@ class MicrosoftGraphClient
     {
         $message = new Message;
 
-        // Subject
         $message->setSubject($email->getSubject());
 
-        // Recipients
         $message->setToRecipients($this->convertAddresses($email->getTo()));
 
         if ($cc = $email->getCc()) {
@@ -75,7 +74,6 @@ class MicrosoftGraphClient
             $message->setBccRecipients($this->convertAddresses($bcc));
         }
 
-        // Body (HTML preferred, fallback to text)
         $body = new ItemBody;
         $htmlBody = $email->getHtmlBody();
 
@@ -89,12 +87,10 @@ class MicrosoftGraphClient
 
         $message->setBody($body);
 
-        // Attachments
         if ($attachments = $email->getAttachments()) {
             $message->setAttachments($this->convertAttachments($attachments));
         }
 
-        // Reply-To
         if ($replyTo = $email->getReplyTo()) {
             $message->setReplyTo($this->convertAddresses($replyTo));
         }

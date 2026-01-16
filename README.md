@@ -102,8 +102,6 @@ app('mail.microsoft-graph.token-provider')->clearToken();
 
 ## Testing
 
-Run the test suite:
-
 ```bash
 composer test
 ```
