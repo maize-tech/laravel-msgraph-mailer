@@ -1,5 +1,5 @@
 {
-    "name": "maize-tech/laravel-msgraph-mailer",
+    "name": "momenoor/laravel-msgraph-mailer",
     "description": "Laravel mail transport driver for sending emails via Microsoft Graph API with OAuth2 authentication",
     "keywords": [
         "laravel",
@@ -11,7 +11,7 @@
         "transport",
         "azure"
     ],
-    "homepage": "https://github.com/maize-tech/laravel-msgraph-mailer",
+    "homepage": "https://github.com/momenoor/laravel-msgraph-mailer",
     "license": "MIT",
     "authors": [
         {
@@ -23,19 +23,19 @@
     "require": {
         "php": "^8.3",
         "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^11.0||^12.0",
+        "illuminate/contracts": "^13.0",
         "saloonphp/saloon": "^3.14",
         "saloonphp/cache-plugin": "^3.0",
         "microsoft/microsoft-graph": "^2.53",
-        "symfony/mailer": "^7.0||^6.0",
-        "symfony/mime": "^7.0||^6.0",
+        "symfony/mailer": "*",
+        "symfony/mime": "*",
         "guzzlehttp/psr7": "^2.7"
     },
     "require-dev": {
         "laravel/pint": "^1.14",
         "nunomaduro/collision": "^8.8",
         "larastan/larastan": "^3.0",
-        "orchestra/testbench": "^10.0.0||^9.0.0",
+        "orchestra/testbench": "*",
         "pestphp/pest": "^4.0",
         "pestphp/pest-plugin-arch": "^4.0",
         "pestphp/pest-plugin-laravel": "^4.0",
